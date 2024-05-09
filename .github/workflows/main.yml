@@ -25,34 +25,10 @@ jobs:
           username: ${{ secrets.EVO_CR_LOGIN }}
           password: ${{ secrets.EVO_CR_PWD }}
 
-      - name: .NET - Build and push docker image to Evolution Aritfact Registry
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: ${{ env.CR_URI }}/evo-restapidotnet:${{ github.sha }}
-          file: ./Dockerfile
-          context: ./restapi-dotnet/src
-          
       - name: NodeJS - Build and push docker image to Evolution Aritfact Registry
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.CR_URI }}/evo-restapinodejs:${{ github.sha }}
-          file: ./restapi-nodejs/src/Dockerfile
-          context: ./restapi-nodejs/src
-          
-      - name: Python - Build and push docker image to Evolution Aritfact Registry
-        uses: docker/build-push-action@v5
-        with:
-          push: true
           tags: ${{ env.CR_URI }}/dating_clikpik_tg:${{ github.sha }}
-          file: ./restapi-python/src/Dockerfile
-          context: ./restapi-python/src
-
-      - name: Go - Build and push docker image to Evolution Aritfact Registry
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: ${{ env.CR_URI }}/evo-restapigo:${{ github.sha }}
-          file: ./restapi-go/src/Dockerfile
-          context: ./restapi-go/src
+          file: ./Dockerfile
+          context: ./src
