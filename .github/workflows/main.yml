@@ -8,6 +8,7 @@ on:
 env:
   CR_URI: ${{secrets.CR_URI}}
   BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+  HUSKY: 0
 jobs:
   build:
     runs-on: ubuntu-latest
