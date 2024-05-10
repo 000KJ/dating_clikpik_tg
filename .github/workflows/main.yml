@@ -31,5 +31,5 @@ jobs:
         with:
           push: true
           tags: ${{ env.CR_URI }}/dating_clikpik_tg:${{ github.sha }}
-          file: Dockerfile
-          context: ./src
+          file: ./Dockerfile
+          context: .
