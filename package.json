@@ -7,18 +7,13 @@
     "start": "nodemon",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky",
+    "prepare": "cd .. .husky/install.mjs",
     "lint": "eslint 'src/**/*' --ext .js,.ts",
     "prettier": "prettier --write \"src/**/*.{js,ts}\""
   },
   "keywords": [],
   "author": "gasparyan.kj@gmail.com",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
     "@types/cors": "^2.8.17",
