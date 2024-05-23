@@ -29,6 +29,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/amd64
+          provenance: false
           tags: ${{ env.CR_URI }}/dating_clikpik_tg:${{ github.sha }}
           file: ./Dockerfile
           context: ./
